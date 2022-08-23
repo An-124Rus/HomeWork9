@@ -3,28 +3,26 @@
     private static void Main(string[] args)
     {
         string userMessage;
-        string wordForExit;
+        string answerForExit;
         string password = "exit";
-        bool isWorking = true;
+        bool inUse = true;
 
         Console.Write("Введите сообщение для повторения: ");
-        userMessage = Console.ReadLine();
+        userMessage = Console.ReadLine();        
 
-        while (isWorking)
+        while (inUse)
         {
-            if (isWorking = true)
+            Console.Write("Введите пароль для выхода: ");
+            answerForExit = Console.ReadLine();
+
+            if (password == answerForExit)
             {
-                Console.WriteLine(userMessage);
+                inUse = false;
+                Console.WriteLine("Вы успешно вышли");
             }
             else
             {
-                Console.Write($"Введите слово exit для выхода: ");
-                wordForExit = Console.ReadLine();
-
-                if (wordForExit == password)
-                {
-                    break;
-                }
+                Console.WriteLine("Попробуйте снова");
             }
         }
     }
